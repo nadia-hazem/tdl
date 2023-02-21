@@ -198,6 +198,13 @@
             }
         }
 
+        // Récupérer l'id
+        public function getId()
+        {
+            return $this->id;
+        }
+
+
         // Utilisateur déjà existant?
         public function isUserExist($login)
         {

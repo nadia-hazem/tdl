@@ -42,7 +42,7 @@ $bdd = $user->getBdd();
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
-    <script src="/tdl/assets/js/script.js"></script>
+    
     <script src="/tdl/assets/js/app.js"></script>
     
 </head>
@@ -55,25 +55,28 @@ $bdd = $user->getBdd();
 
         <main class="container justify-content-center">
 
-            <h1 class="h1 text-center py-3">Todolist</h1>
+            <h1 class="h1 text-center pt-2">Todolist</h1>
 
-            <form method="post" id="todoForm" action="traitement.php">
+            <form method="post" id="todoForm" action="">
 
                 <label for="task">Tâche:</label>
                 <input type="text" name="task" id="task" required>
                 <button type="submit" id="addTask" name="ajouter">Ajouter</button>
 
             </form>
-
+            <p></p>
             <div class="d-flex justify-content-center gap-5 my-5">
-
-                <ul id="todoList">
+                <section class="d-flex flex-column md-6">
                     <h2 class="h2 text-center">Tâches à faire</h2>
-                </ul>
+                    <ul id="todoList">
+                    </ul>
+                </section>
 
-                <ul id="doneList">
+                <section class="d-flex flex-column md-6">
                     <h2 class="h2 text-center">Tâches accomplies</h2>
-                </ul>
+                    <ul id="doneList">
+                    </ul>
+                </section>
 
             </div>
         

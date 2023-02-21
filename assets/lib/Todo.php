@@ -25,19 +25,25 @@ class Todo {
         }
 
     } 
-
+    
     // Récupérer la connexion à la base de données
     public function getBdd() {
         return $this->bdd;
     }
 
     // Insertion de la tâche dans la base de données
-    public function insertTask($task) {
+    public function insertTask($task, $userId) {
         $task = trim(htmlspecialchars($task));
         
-        $stmt = $this->bdd->prepare("INSERT INTO todo (task, dateStart) VALUES (:task, NOW())");
-        $stmt->$this->bdd->prepare(':task', $task);
-        $stmt->execute();
+        $request = "INSERT INTO todo (task, dateStart, id_utilisateur) VALUES (:task, NOW(), :userId)";
+
+        $stmt = $this->bdd->prepare($request);
+        $stmt->execute(array
+        (
+            'task' => $task,
+            'userId' => $userId
+        ));
+        echo 'ok';
     }
     
     // Supprimer une tâche
@@ -45,16 +51,34 @@ class Todo {
         $delete = "DELETE FROM todo WHERE id = ?";
         $delete = $this->bdd->prepare($delete);
         $delete->execute([$taskId]);
+
+        echo 'ok';
     }
     
     // Marquer une tâche comme faite
     public function markTask($taskId) {
-        $query = "UPDATE todo SET state = 1 WHERE id = ?";
+        // update le booléen state à 1 et ajouter la date de fin
+        $query = "UPDATE todo SET state = 1, dateEnd=NOW() WHERE id = ?";
         $statement = $this->bdd->prepare($query);
         $statement->execute([$taskId]);
+
+        echo 'ok';
+    }
+
+    // Récupérer les tâches
+    public function getTasks($userId) {
+        $request = "SELECT * FROM todo WHERE id_utilisateur = :userId";
+        $stmt = $this->bdd->prepare($request);
+        $stmt->execute(array
+        (
+            'userId' => $userId
+        ));
+        $tasks = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $tasks;
     }
     
 
 }
+
 
 ?>
