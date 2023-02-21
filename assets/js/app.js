@@ -11,22 +11,16 @@ document.addEventListener("DOMContentLoaded", function() {
     // Fonction pour créer un élément de liste avec un bouton de suppression et de basculement
     function createTaskElement(task) {
         // Créer l'élément de liste
-        const li = document.createElement("li");
-        li.innerText = task.task;
+        let tr = document.createElement("tr");
+        let tdText = document.createElement("td");
+        tdText.innerText = task.task;
+        let tdDate = document.createElement("td");
 
-        // Créer le bouton de suppression
-        const deleteButton = document.createElement("button");
-        deleteButton.classList.add("rouge", "btn", "btn-sm", "btn-outlin");
-        deleteButton.setAttribute("id", task.id);
-        deleteButton.innerText = " ❌";
-        deleteButton.style.border = "none";
-        deleteButton.addEventListener("click", function() {
-            deleteTask(this.getAttribute("id"));
-        });
+        let tdBtns = document.createElement("td");
 
         // Créer le bouton de basculement
         const toggleButton = document.createElement("button");
-        toggleButton.classList.add("vert", "btn", "btn-sm", "btn-outlin");
+        toggleButton.classList.add("btn", "btn-sm");
         toggleButton.setAttribute("id", task.id);
         toggleButton.innerText = " ✅";
         toggleButton.style.border = "none";
@@ -37,18 +31,32 @@ document.addEventListener("DOMContentLoaded", function() {
             toggleTask(id);
         });
 
+        // Créer le bouton de suppression
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("btn", "btn-sm");
+        deleteButton.setAttribute("id", task.id);
+        deleteButton.innerText = " ❌";
+        deleteButton.style.border = "none";
+        deleteButton.addEventListener("click", function() {
+            deleteTask(this.getAttribute("id"));
+        });
+
+        tr.appendChild(tdText);
+        tr.appendChild(tdDate);
+        tr.appendChild(tdBtns);
+
         // ajouter les boutons si besoin
         if (task.state == 1) {
+            tdDate.innerText = " -" + task.dateStart + " -" + task.dateEnd;
             // Ajouter le bouton de suppression
-            li.appendChild(deleteButton);
+            tdBtns.appendChild(deleteButton);
         } else {
+            tdDate.innerText = task.dateStart;
             // Ajouter le bouton de suppression et de basculement
-            li.appendChild(deleteButton);
-            li.appendChild(toggleButton);
+            tdBtns.appendChild(deleteButton);
+            tdBtns.appendChild(toggleButton);
         }
-
-
-        return li;
+        return tr;
     }
 
     // Fonction pour ajouter une tâche à la liste des tâches à faire
@@ -82,12 +90,12 @@ document.addEventListener("DOMContentLoaded", function() {
             todoList.innerHTML = "";
             doneList.innerHTML = "";
             for (let i = 0; i < data.length; i++) {
-                const li = createTaskElement(data[i]);
+                const td = createTaskElement(data[i]);
                 if (data[i].state == 1) {
-                    doneList.appendChild(li);
+                    doneList.appendChild(td);
 
                 } else {
-                    todoList.appendChild(li);
+                    todoList.appendChild(td);
                 }
             }
         })

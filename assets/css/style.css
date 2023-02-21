@@ -2,57 +2,106 @@
 
 /* import font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
 /* maintient le footer en bas de page */
 .wrapper {
     min-height: 100vh;
     background:transparent;
-     /* Equal to height of footer */
-     /* But also accounting for potential margin-bottom of last child */
-    margin-bottom: -50px;
-    margin-top: 3rem;
+    margin-bottom: -50px;/* Equal to height of footer */
 } /* grace au push*/
 .footer,
 .push {
     height: 50px;
 }
+
 .hover:hover {
     transition: all 0.3s ease-in-out;
     opacity: 0.8;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background: #f1f1f1;
 }
 body#index {
-    background: url(/tdl/assets/img/bg1.jpg) no-repeat center center fixed;
+    background: url(/tdl/assets/img/bg7.png) no-repeat center center fixed;
     transition: all 0.5s ease-in-out;
 }
-body#livreor {
-    background: url(/tdl/assets/img/bg2.jpg) no-repeat center center fixed;
-    transition: all 0.5s ease-in-out;
-}
-body#profil {
-    background: url(/tdl/assets/img/bg3.jpg) no-repeat center center fixed;
-    transition: all 0.5s ease-in-out;
-}
-body#user {
-    background: url(/tdl/assets/img/bg4.jpg) no-repeat center center fixed;
-    transition: all 0.5s ease-in-out;
-}
-body#commentaire {
-    background: url(/tdl/assets/img/bg5.png) no-repeat center center fixed;
+body#todolist {
+    background: url(/tdl/assets/img/bg4.png) no-repeat center center fixed;
     transition: all 0.5s ease-in-out;
 }
 
-main {
-    margin-top: 3rem;
+header {
+    top: 0;
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     width: 80%;
-    margin: 0 auto;
     padding: 1rem;
+    margin-top: 5rem;
+}
+.opa {
+    background: white;
+    opacity: 0.85;
+}
+
+#connexionDiv, #inscriptionDiv {
+    width: 90%;
+    margin: 0 auto;
+    transition: all 0.5s ease-in-out;
+}
+
+.to {
+    position: absolute;
+    top: 30%;
+    left: 5%;
+    writing-mode: tb-lr;
+    color: #E15A5A;
+    font-size: 6rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px #000000;
+}
+.do {
+    position: absolute;
+    bottom: 30%;
+    left: 5%;
+    writing-mode: tb-lr;
+    color: #798CBC;
+    font-size: 8rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.list {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    writing-mode: vertical-rl; 
+    text-orientation: upright;
+    color: #3E9072;
+    font-size: 6rem;
+    font-weight: 800;
+    text-shadow: 2px 2px 4px #000000;
+}
+.bg-title {
+    background-color: #2D7C7F;
+}
+.bg-blue {
+    background-color: #195D7E;
+    color: white;
+}
+.bg-blue:hover {
+    background-color: #60b093;
 }
 
 .roboto {
@@ -64,18 +113,24 @@ li {
 }
 a {
     /* text-decoration: none; */
-    color: #d2b069;
+    color: #2D7C7F;
     font-weight:800;
 }
 form {
     margin: 0 auto;
-    width: 50%;
-    text-align: center;
-    border: 1px solid #ccc;
-    padding: 3rem;
+    width: 80%;
+    border-radius: 15px;
+    padding: 5rem;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-
+.todoform {
+    background: white;
+    opacity: 0.85;
+}
+.todoform input {
+    width: 70%;
+    padding: 5px 20px;
+}
 /* Meddias queries */
 
 @media (max-width: 1200px) {

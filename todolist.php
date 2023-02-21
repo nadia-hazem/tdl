@@ -47,7 +47,7 @@ $bdd = $user->getBdd();
     
 </head>
 
-<body>
+<body id="todolist">
 
     <?php include 'includes/header.php'; ?>
 
@@ -55,27 +55,38 @@ $bdd = $user->getBdd();
 
         <main class="container justify-content-center">
 
-            <h1 class="h1 text-center pt-2">Todolist</h1>
+            <form method="post" id="todoForm" class="opa rounded text-center animate__animated animate__zoomIn" action="">
 
-            <form method="post" id="todoForm" action="">
-
-                <label for="task">Tâche:</label>
+                <label for="task">Tâche :</label>
                 <input type="text" name="task" id="task" required>
-                <button type="submit" id="addTask" name="ajouter">Ajouter</button>
+
+                <button type="submit" class="btn bg-blue" id="addTask" name="ajouter">Ajouter</button>
 
             </form>
+
             <p></p>
-            <div class="d-flex justify-content-center gap-5 my-5">
+
+            <div class="d-flex justify-content-center gap-5 my-5 p-5 opa rounded w-100 animate__animated animate__zoomIn">
                 <section class="d-flex flex-column md-6">
-                    <h2 class="h2 text-center">Tâches à faire</h2>
-                    <ul id="todoList">
-                    </ul>
+
+                    <span class="bg-title rounded w-100">
+                        <h2 class="h2 text-center text-white py-2 px-5">Tâches à faire</h2>
+                    </span>
+
+                    <table id="todoList" width="100%">
+                    </table>
+
                 </section>
 
                 <section class="d-flex flex-column md-6">
-                    <h2 class="h2 text-center">Tâches accomplies</h2>
-                    <ul id="doneList">
-                    </ul>
+
+                    <span class="bg-title rounded w-100">
+                        <h2 class="h2 text-center text-white py-2 px-5">Tâches accomplies</h2>
+                    </span>
+
+                    <table id="doneList" width="100%">
+                    </table>
+
                 </section>
 
             </div>

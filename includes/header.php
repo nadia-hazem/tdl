@@ -4,13 +4,9 @@ require_once 'assets/lib/User.php';
 $user = new User();
 ?>
 
-<header class="bg-grey">
+<header class="bg-blue w-100 position-fixed py-2 z-3">
 
-    <nav class="close" id="nav">
-
-        <!-- Burger menu -->
-        <burgerButton class="open" onclick="burgerSwitch(this.parentNode);">
-        </burgerButton>
+    <nav id="nav">
 
         <!-- tester si l'utilisateur est connecté -->
         <?php
@@ -20,9 +16,8 @@ $user = new User();
                 header('Location: index.php');
             }
         }
-        else if ($user->isConnected()) {
-            
-            ?>
+        else if ($user->isConnected()) {            
+        ?>
 
         <!-- afficher les liens menus correspondants à la session -->
         <ul class="nav nav-pills nav-fill">
@@ -30,7 +25,7 @@ $user = new User();
             <!-- afficher le login de l'utilisateur -->
             <li class="nav-item pt-2"><mark><?php $login = $user->getLogin(); ?></mark></li>
 
-            <li id="deconnexion" class="nav-item"><a class="nav-link text-dark" href="index.php?deconnexion=true">DECONNEXION</a></li>
+            <li id="deconnexion" class="nav-item"><a class="nav-link text-white" href="index.php?deconnexion=true">DECONNEXION</a></li>
 
         </ul>
         

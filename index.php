@@ -37,63 +37,108 @@ $pdo = $user->getBdd();
     
 </head>
 
-<body id="user">
+<body id="index">
 
     <?php include 'includes/header.php'; ?>
 
     <div class="wrapper">
 
-        <main class="container">
+        <main class="container justify-content-center">
+
+                <span class="to animate__animated animate__bounceInDown">TO</span>
+                <span class="do animate__animated animate__lightSpeedInLeft">DO</span>
+                <span class="list animate__animated animate__bounceInRight">LIST</span>
 
             <div id="connexionDiv" class="animate__animated animate__zoomIn">
                 
                 <!-- login -->
-                <form id="loginForm" class="bg-white bg-opacity-75" action="verification.php" method="post"> <!-- redirection vers la page de vérification -->
+                <form id="loginForm" class="opa rounded text-center" action="verification.php" method="post"> <!-- redirection vers la page de vérification -->
                 
-                <h3 class="playfair">Connectez-vous pour consulter vos tâches</h3>
-                <h1 class="text-center">Connexion</h1>
+                    <h1 class="text-center">Connexion</h1>
+                    <h3 class="playfair text-center mb-5">Connectez-vous pour consulter vos tâches</h3>
 
-                    <label for="login">Login</label>
-                    <input type="text" class="login form-control" placeholder="Entrer le nom d'utilisateur" name="login" required>
-                    <p></p>
-                    <label for="password">Mot de passe</label>
-                    <input type="password" class="password form-control" placeholder="Entrer le mot de passe" name="password" required>
-                    <p></p>
-                    <input type="submit" id="loginSubmit" class="btn btn-secondary" value="Connexion">
-                    <p class="error"></p>
+                    <div class="row">
+                        <div class="col">
+                            <label for="login">Login</label>
+                            <input type="text" class="login form-control" placeholder="Entrer le nom d'utilisateur" name="login" required>
+                            <p></p>
+                        </div>
 
-                    Vous n'avez pas de compte ? &nbsp;<a href id="switchReg">Inscription</a>
+                        <div class="col">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" class="password form-control" placeholder="Entrer le mot de passe" name="password" required>
+                            <p></p>
+                        </div>
+                    </div> <!-- /row -->
+                    <br>
+                    <div class="row">
+                        <div class="col">
+                            <input type="submit" id="loginSubmit" class="btn bg-blue" value="Connexion">
+                            <p class="error"></p>
+                        </div>
+
+                        <div class="col">
+                            Vous n'avez pas de compte ? &nbsp;<a href id="switchReg">Inscription</a>
+                        </div>
+                    </div> <!-- /row -->
+
                 </form> <!-- fin du formulaire -->
                 
             </div>
 
             
-            <div id="inscriptionDiv" class="animate__animated animate__zoomIn">
+            <div id="inscriptionDiv" class=" animate__animated animate__zoomIn ">
                 
                 <!-- register -->
-                <form id="registerForm"  class="bg-white bg-opacity-75" action="verification.php">
+                <form id="registerForm"  class="opa" action="verification.php">
                     
-                    <h3 class="playfair">Inscrivez-vous pour créer une Todolist</h3>
                     <h1 class="text-center">Inscription</h1>
+                    <h3 class="playfair text-center mb-5">Inscrivez-vous pour créer une Todolist</h3>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="nom">Nom</label>
+                            <input type="text" name="nom" class="nom form-control" required>
+                            <p></p>
+                        </div>
 
-                    <label for="nom">Nom</label>
-                    <input type="text" name="nom" class="nom form-control" >
-                    <p></p>
-                    <label for="prenom">Prénom</label>
-                    <input type="text" name="prenom" class="prenom form-control" >
-                    <label for="login">login</label>
-                    <input type="text" name="login" class="login form-control" required>
-                    <p></p>
-                    <label for="password">Mot de passe</label>
-                    <input type="password" name="password" class="password form-control" required>
-                    <p></p>
-                    <label for="password2">Confirmer le mot de passe</label>
-                    <input type="password" name="password2" id="password2" class="form-control" required>
-                    <p></p>
-                    <input type="submit" id="registerSubmit" class="btn btn-secondary" value="Inscription">
-                    <p class="error"></p>
+                        <div class="col-md-6">
+                            <label for="prenom">Prénom</label>
+                            <input type="text" name="prenom" class="prenom form-control" required >
+                            <p></p>
+                        </div>
+                    </div> <!-- /row -->
 
-                    Déjà inscrit ? &nbsp;<a href id="switchLog">Connexion</a>
+                    <div class="row">
+                        <div class="col-md-12">    
+                            <label for="login">login</label>
+                            <input type="text" name="login" class="login form-control" required>
+                            <p></p>
+                        </div>
+                    </div> <!-- /row -->
+
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="password">Mot de passe</label>
+                            <input type="password" name="password" class="password form-control" required>
+                            <p></p>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="password2">Confirmer le mot de passe</label>
+                            <input type="password" name="password2" id="password2" class="form-control" required>
+                            <p></p>
+                        </div>
+                    </div> <!-- /row -->
+
+                    <div class="row">                        
+                        <div class="col-md-6">
+                            <input type="submit" id="registerSubmit" class="btn bg-blue" value="Inscription">
+                            <p class="error"></p>
+                        </div>
+                        
+                        <div class="col-md-6">
+                            Déjà inscrit ? &nbsp;<a href id="switchLog">Connexion</a>
+                        </div>
+                    </div> <!-- /row -->
 
                 </form> <!-- fin du formulaire -->
             </div>

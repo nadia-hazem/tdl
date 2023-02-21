@@ -67,7 +67,7 @@ class Todo {
 
     // Récupérer les tâches
     public function getTasks($userId) {
-        $request = "SELECT * FROM todo WHERE id_utilisateur = :userId";
+        $request = "SELECT *, DATE_FORMAT(dateStart, '%d/%m/%Y %H:%i') AS dateStart, DATE_FORMAT(dateEnd, '%d/%m/%Y %H:%i') AS dateEnd FROM todo WHERE id_utilisateur = :userId";
         $stmt = $this->bdd->prepare($request);
         $stmt->execute(array
         (
