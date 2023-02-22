@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
         let tdText = document.createElement("td");
         tdText.innerText = ' ⚑ ' + task.task;
         let tdDate = document.createElement("td");
-
         let tdBtns = document.createElement("td");
 
         // Créer le bouton de basculement
@@ -40,12 +39,12 @@ document.addEventListener("DOMContentLoaded", function() {
         deleteButton.addEventListener("click", function() {
             deleteTask(this.getAttribute("id"));
         });
-
+        // Ajouter les 3 <td> à la <tr>
         tr.appendChild(tdText);
         tr.appendChild(tdDate);
         tr.appendChild(tdBtns);
 
-        // condition des boutons suppr. et bascule
+        // condition d'affichage des boutons suppr. et bascule
         if (task.state == 1) {
             tdDate.innerText = " ⏵ " + task.dateStart + " ⏯ " + task.dateEnd;
             // Ajouter le bouton de suppression

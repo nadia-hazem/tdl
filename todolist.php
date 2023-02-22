@@ -53,9 +53,25 @@ $bdd = $user->getBdd();
 
     <div class="wrapper">
 
-        <main class="container justify-content-center">
+        <main class="container mt-5 pt-5 justify-content-center">
 
-            <form method="post" id="todoForm" class="todoform opa rounded text-center animate__animated animate__zoomIn" action="">
+            <div class="col"> <!-- date et heure -->
+
+                <p class="text-white text-center">
+                    <?php
+                    $mois = array(1=>'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre');
+                    $jours = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
+                    echo $jours[date('w')].' '.date('j').' '.$mois[date('n')].' '.date('Y'); 
+                    ?>
+                </p>
+                <div id="clockDisplay" class="clock quartz text-center text-white lead">
+                    <h1>00:00:00</h1>
+                </div>
+
+            </div> <!--/col-->
+
+            <!-- formulaire d'ajout de tâche -->
+            <form method="post" id="todoForm" class="todoform opa rounded text-center shadow w-100 animate__animated animate__zoomIn" action="">
 
                 <label for="task"><h4>Tâche :</h4></label>
                 
@@ -67,23 +83,24 @@ $bdd = $user->getBdd();
 
             <p></p>
 
-            <div class="row wrap rounded w-100 animate__animated animate__zoomIn">
+            <!-- liste des tâches à faire -->
+            <div class="row wrap rounded w-100 mx-auto animate__animated animate__zoomIn">
 
-                <section class="col md-6 rounded m-3 py-3 opa md-6">
+                <section class="col md-5 rounded mx-3 py-3 opa">
 
                     <div class="bg-title rounded w-100">
-                        <h2 class="h2 text-center text-white py-2 px-5">A faire</h2>
+                        <h2 class="h2 text-center text-white p-2">A faire</h2>
                     </div>
 
                     <table id="todoList" width="100%">
                     </table>
 
                 </section>
-
-                <section class="col md-6 rounded m-3 py-3 opa md-6">
+                <!-- liste des tâches terminées -->
+                <section class="col md-5 rounded mx-3 py-3 opa">
 
                     <div class="bg-title rounded w-100">
-                        <h2 class="h2 text-center text-white py-2 px-5">Terminées</h2>
+                        <h2 class="h2 text-center text-white p-2">Terminées</h2>
                     </div>
 
                     <table id="doneList" width="100%">
@@ -95,11 +112,24 @@ $bdd = $user->getBdd();
         
         </main>
 
+        <!-- maintient le footer en bas de page -->
         <div class="push"></div>
 
     </div> <!-- /wrapper -->
 
     <?php include 'includes/footer.php'; ?>
+
+    <script>
+
+        function horloge() {
+            let dt = new Date().toLocaleTimeString(); // hh:mm:ss
+
+            document.getElementById("clockDisplay").innerHTML = dt;
+            setTimeout(horloge, 1000); // mise à jour du contenu "clockDisplay" toutes les secondes
+        }
+        horloge();
+
+    </script>
 
 </body>
 </html>

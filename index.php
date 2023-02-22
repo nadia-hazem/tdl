@@ -5,6 +5,9 @@ $user = new User();
 $pdo = $user->getBdd();
 ?>
 
+<!----------------------------------
+                HTML 
+------------------------------------>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,25 +37,42 @@ $pdo = $user->getBdd();
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
     <script src="/tdl/assets/js/script.js"></script>
+
     
 </head>
 
 <body id="index">
 
-    <?php include 'includes/header.php'; ?>
-
     <div class="wrapper">
 
-        <main class="container justify-content-center">
+        <main class="container mt-5 pt-5">
 
+            <!-- date -->
+            <div class="col">
+                <p class="text-white text-center">
+                    <?php
+                    $mois = array(1=>'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre');
+                    $jours = array('dimanche', 'lundi', 'mardi', 'mercredi', 'jeudi', 'vendredi', 'samedi');
+                    echo $jours[date('w')].' '.date('j').' '.$mois[date('n')].' '.date('Y'); 
+                    ?>
+                </p>
+                <div id="clockDisplay" class="clock quartz text-center text-white lead">
+                    <h1>00:00:00</h1>
+                </div>
+            </div>
+
+            <!-- lettres animées -->
+            <div class="row justify-content-center">
                 <span class="to animate__animated animate__bounceInDown">TO</span>
                 <span class="do animate__animated animate__lightSpeedInLeft">DO</span>
                 <span class="list animate__animated animate__bounceInRight">LIST</span>
+            </div>
 
+            <!-- formulaire connexion -->
             <div id="connexionDiv" class="animate__animated animate__zoomIn">
                 
                 <!-- login -->
-                <form id="loginForm" class="opa rounded text-center" action="verification.php" method="post"> <!-- redirection vers la page de vérification -->
+                <form id="loginForm" class="opa rounded text-center shadow" action="verification.php" method="post"> <!-- redirection vers la page de vérification -->
                 
                     <h1 class="text-center">Connexion</h1>
                     <h3 class="playfair text-center mb-5">Connectez-vous pour consulter vos tâches</h3>
@@ -82,15 +102,15 @@ $pdo = $user->getBdd();
                         </div>
                     </div> <!-- /row -->
 
-                </form> <!-- fin du formulaire -->
+                </form> <!-- /formulaire -->
                 
-            </div>
+            </div> <!-- /#connexionDiv -->
 
-            
+            <!-- formulaire inscription -->
             <div id="inscriptionDiv" class=" animate__animated animate__zoomIn ">
                 
                 <!-- register -->
-                <form id="registerForm"  class="opa rounded text-center" action="verification.php">
+                <form id="registerForm"  class="opa rounded text-center shadow" action="verification.php">
                     
                     <h1 class="text-center">Inscription</h1>
                     <h3 class="playfair text-center mb-5">Inscrivez-vous pour créer une Todolist</h3>
@@ -141,7 +161,8 @@ $pdo = $user->getBdd();
                     </div> <!-- /row -->
 
                 </form> <!-- fin du formulaire -->
-            </div>
+
+            </div> <!-- /#inscriptionDiv -->
 
         </main>
 
@@ -154,6 +175,18 @@ $pdo = $user->getBdd();
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+    <script>
+
+        function horloge() {
+            let dt = new Date().toLocaleTimeString(); // hh:mm:ss
+    
+            document.getElementById("clockDisplay").innerHTML = dt;
+            setTimeout(horloge, 1000); // mise à jour du contenu "clockDisplay" toutes les secondes
+        }
+        horloge();
+
+    </script>
 
 </body>
 </html>

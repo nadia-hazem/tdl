@@ -14,6 +14,10 @@
             $dbname = 'tdl';
             $dbuser = 'root';
             $dbpass = '';
+            //$host = 'localhost';
+            //$dbname = 'nadia-hazem_tdl';
+            //$dbuser = 'nadia-hazem';
+            //$dbpass = '*dbpassword*';
 
             /* $this->bdd = new PDO('mysql:host=localhost; dbname=classes; charset=utf8', 'root', ''); */
             try {

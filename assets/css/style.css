@@ -2,13 +2,25 @@
 
 /* import font */
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
-html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
+
+
+@font-face {
+    font-family: 'quartzregular';
+    src: url('/tdl/assets/fonts/quartz_regular.woff2') format('woff2'),
+        url('/tdl/assets/fonts/quartz_regular.ttf') format('ttf'),
+        url('/tdl/assets/fonts/quartz_regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
+
+.quartz {
+    font-family: 'quartzregular', sans-serif;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+}
+
 /* maintient le footer en bas de page */
 .wrapper {
     min-height: 100vh;
@@ -26,7 +38,7 @@ html, body {
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     background: #f1f1f1;
 }
 body#index {
@@ -42,21 +54,13 @@ header {
     top: 0;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 80%;
-    padding: 1rem;
-    margin-top: 5rem;
-    margin-bottom: 5rem;
-}
 .opa {
     background: white;
     opacity: 0.85;
 }
-
+.clock {
+    font-size:  2rem;
+}
 #connexionDiv, #inscriptionDiv {
     width: 90%;
     margin: 0 auto;
@@ -105,9 +109,8 @@ header {
 .bg-blue:hover {
     background-color: #60b093;
 }
-
-.roboto {
-    font-family: 'Roboto', sans-serif;
+.clock {
+    padding-bottom: 1rem;
 }
 
 li {
@@ -122,10 +125,6 @@ form {
     margin: 0 auto;
     width: 80%;
     padding: 2rem;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-}
-.todoform {
-    width: 100%;
 }
 .todoform label {
     width: 10%;

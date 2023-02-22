@@ -19,12 +19,12 @@ $user = new User();
         else if ($user->isConnected()) {            
         ?>
 
-        <!-- afficher les liens menus correspondants à la session -->
+        <!-- afficher le menu de la session -->
         <ul class="nav nav-pills nav-fill">
 
             <!-- afficher le login de l'utilisateur -->
-            <li class="nav-item pt-2"><mark><?php $login = $user->getLogin(); ?></mark></li>
-
+            <li class="nav-item py-2 px-2"><mark class="p-2 bg-light"><?php $login = $user->getLogin(); ?></mark></li>
+            <!-- afficher le bouton de déconnexion -->
             <li id="deconnexion" class="nav-item"><a class="nav-link text-white" href="index.php?deconnexion=true">DECONNEXION</a></li>
 
         </ul>
