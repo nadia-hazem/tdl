@@ -23,4 +23,4 @@ With the exception of the logout button, all possible actions on the “todolist
   </tr>
 </table>
 
-### Voir le projet : <a href="https://nadia-hazem.students-laplateforme.io/tdl/index.php">ToDoList</a>
+### Voir le projet : <a href="https://nadia-hazem.students-laplateforme.io/tdl/index.php" target="_blank">ToDoList</a>
