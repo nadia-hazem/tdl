@@ -55,34 +55,36 @@ $bdd = $user->getBdd();
 
         <main class="container justify-content-center">
 
-            <form method="post" id="todoForm" class="opa rounded text-center animate__animated animate__zoomIn" action="">
+            <form method="post" id="todoForm" class="todoform opa rounded text-center animate__animated animate__zoomIn" action="">
 
-                <label for="task">Tâche :</label>
-                <input type="text" name="task" id="task" required>
+                <label for="task"><h4>Tâche :</h4></label>
+                
+                <input type="text" name="task" id="task" class="rounded inline form-control" required>
 
-                <button type="submit" class="btn bg-blue" id="addTask" name="ajouter">Ajouter</button>
+                <button type="submit" class="btn bg-blue my-1" id="addTask" name="ajouter">Ajouter</button>
 
             </form>
 
             <p></p>
 
-            <div class="d-flex justify-content-center gap-5 my-5 p-5 opa rounded w-100 animate__animated animate__zoomIn">
-                <section class="d-flex flex-column md-6">
+            <div class="row wrap rounded w-100 animate__animated animate__zoomIn">
 
-                    <span class="bg-title rounded w-100">
-                        <h2 class="h2 text-center text-white py-2 px-5">Tâches à faire</h2>
-                    </span>
+                <section class="col md-6 rounded m-3 py-3 opa md-6">
+
+                    <div class="bg-title rounded w-100">
+                        <h2 class="h2 text-center text-white py-2 px-5">A faire</h2>
+                    </div>
 
                     <table id="todoList" width="100%">
                     </table>
 
                 </section>
 
-                <section class="d-flex flex-column md-6">
+                <section class="col md-6 rounded m-3 py-3 opa md-6">
 
-                    <span class="bg-title rounded w-100">
-                        <h2 class="h2 text-center text-white py-2 px-5">Tâches accomplies</h2>
-                    </span>
+                    <div class="bg-title rounded w-100">
+                        <h2 class="h2 text-center text-white py-2 px-5">Terminées</h2>
+                    </div>
 
                     <table id="doneList" width="100%">
                     </table>

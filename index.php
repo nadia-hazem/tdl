@@ -57,7 +57,7 @@ $pdo = $user->getBdd();
                     <h1 class="text-center">Connexion</h1>
                     <h3 class="playfair text-center mb-5">Connectez-vous pour consulter vos tâches</h3>
 
-                    <div class="row">
+                    <div class="col">
                         <div class="col">
                             <label for="login">Login</label>
                             <input type="text" class="login form-control" placeholder="Entrer le nom d'utilisateur" name="login" required>
@@ -90,7 +90,7 @@ $pdo = $user->getBdd();
             <div id="inscriptionDiv" class=" animate__animated animate__zoomIn ">
                 
                 <!-- register -->
-                <form id="registerForm"  class="opa" action="verification.php">
+                <form id="registerForm"  class="opa rounded text-center" action="verification.php">
                     
                     <h1 class="text-center">Inscription</h1>
                     <h3 class="playfair text-center mb-5">Inscrivez-vous pour créer une Todolist</h3>

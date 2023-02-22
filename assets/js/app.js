@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
         // Créer l'élément de liste
         let tr = document.createElement("tr");
         let tdText = document.createElement("td");
-        tdText.innerText = task.task;
+        tdText.innerText = ' ⚑ ' + task.task;
         let tdDate = document.createElement("td");
 
         let tdBtns = document.createElement("td");
@@ -45,13 +45,13 @@ document.addEventListener("DOMContentLoaded", function() {
         tr.appendChild(tdDate);
         tr.appendChild(tdBtns);
 
-        // ajouter les boutons si besoin
+        // condition des boutons suppr. et bascule
         if (task.state == 1) {
-            tdDate.innerText = " -" + task.dateStart + " -" + task.dateEnd;
+            tdDate.innerText = " ⏵ " + task.dateStart + " ⏯ " + task.dateEnd;
             // Ajouter le bouton de suppression
             tdBtns.appendChild(deleteButton);
         } else {
-            tdDate.innerText = task.dateStart;
+            tdDate.innerText = " 📅 " + task.dateStart;
             // Ajouter le bouton de suppression et de basculement
             tdBtns.appendChild(deleteButton);
             tdBtns.appendChild(toggleButton);
