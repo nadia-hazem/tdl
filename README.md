@@ -1,7 +1,8 @@
 # TDL
 ## ToDoList js/php/html/css
 
-### [DEMO](https://nadia-hazem.students-laplateforme.io/tdl/index.php)
+### See [DEMO](https://nadia-hazem.students-laplateforme.io/tdl/index.php)
+----
 
 <div align="center">
        <img src="https://github.com/nadia-hazem/tdl/blob/03243ef671cea4d45c957cebe8f3a27f2a244460/assets/img/readme-1.png" width="460" target="_blank">              
