@@ -27,7 +27,7 @@ The project displays only 2 pages. home and task page. The index.php contains th
 
 ```php
 
-<!-- formulaire connexion -->
+<!-- Connexion form -->
 <div id="connexionDiv">
    <form id="loginForm” action="verification.php" method="post"> 
      <label for="login">Login</label>
@@ -43,7 +43,7 @@ The project displays only 2 pages. home and task page. The index.php contains th
 Vous n'avez pas de compte ? &nbsp;<a href id="switchReg">Inscription</a>
    </form> <!-- /formulaire -->
 
-<!-- formulaire inscription -->
+<!-- Inscription form -->
 <div id="inscriptionDiv">
    <form id="registerForm"  action="verification.php">
       <label for="nom">Nom</label>
@@ -68,7 +68,7 @@ Vous n'avez pas de compte ? &nbsp;<a href id="switchReg">Inscription</a>
 
 ```
 
-```html <p></p>``` are empty containers for errors display. (Css classes have been omitted in order to simplify).
+```<p></p>``` are empty containers for errors display. (Css classes have been omitted in order to simplify).
 
 ## Script.js
 We declare the different variables needed for script and the functions that switches between forms.
@@ -76,7 +76,7 @@ To display alternate forms, we just use “display” css rule.
 
 ```javascript
 
-	// Charger le DOM
+	// DOM loading
 	document.addEventListener("DOMContentLoaded", function () {
 
 	    // REGISTER
@@ -111,6 +111,44 @@ To display alternate forms, we just use “display” css rule.
 	    };
 	    displayLoginForm();
 
+```
 
+As the connection/inscription module is already commented in other repository and is not the purpose of the project, I won’t give details. (You can consult the files as they are commented enough). Let’s focus on Todo list.
+
+The POST method in forms, calls verification.php file that is here, a way to have clear and well arranged code.
+It’s a list of conditions to manage actions after submit : We call on the User.php class for the different actions. Knowing database connection is in the construct of User class.
+
+## Verification.php
+
+```php
+<?php
+session_start();
+// Path: verification.php
+
+require_once 'assets/lib/User.php'; 
+$user = new User();
+
+// Login disponibility
+if (isset($_POST['verifLogin'])) {
+    $login = $_POST['verifLogin'];
+    $user->isUserExist($login);
+}
+
+// Inscription
+if (isset($_POST['register'])) {
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+    $nom = $_POST['nom'];
+    $prenom = $_POST['prenom'];
+    $user->register($login, $password, $nom, $prenom);
+}
+
+// Connection
+if (isset($_POST['connect'])) {
+    $login = $_POST['login'];
+    $password = $_POST['password'];
+    $user->connect($login, $password);
+}
+?>
 ```
 
