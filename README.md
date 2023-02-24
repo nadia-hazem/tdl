@@ -147,7 +147,7 @@ To display alternate forms, we just use “display” css rule.
 ⚪ The POST method in forms, calls verification.php file that is here, a way to have clear and well arranged code.
 It’s a list of conditions to manage actions after submit : We call on the User.php class for the different actions. Knowing database connection is in the construct of User class.
 
-⚪ To improve the script, I recommend creating a DbConnect.php class so as not to duplicate the database connection in the class construct.😳
+⚪ To improve the script, I recommend creating a DbConnect.php class as the database is called in each class construct.😳
 
 ## Verification.php
 
@@ -313,7 +313,7 @@ $user = new User();
 ⚪ We start with the task form that is just an input and a submit button followed by 2 empty divs to receive dispatched fetched data, by task status.
 
 
-⚪ As for connection/inscription forms, we have a php file traitement.php to deal with actions on submit of new task :
+⚪ As for connection/inscription forms, we have a php file, traitement.php to manage actions on new task submit :
 
 ## traitement.php
 
