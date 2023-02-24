@@ -44,9 +44,9 @@ The project displays only 2 pages. home and task page. The index.php contains th
 
 Here some details about script logic, class files won't be displayer as you just have to consult them for methods. Consider starting viewing these files first :
 
-/assets/lib/User.php
+_*/assets/lib/User.php*_
 
-/assets/lib/Todo.php
+_*/assets/lib/Todo.php*_
 
 Similarly, I omitted the header and the footer. The header containing only the disconnection link and the name of the user connected during a session.
 
