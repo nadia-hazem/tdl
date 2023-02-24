@@ -24,11 +24,11 @@ With the exception of the logout button, all possible actions on the “todolist
 
 ## Prérequis
 
-- <a href="https://img.shields.io/badge/">Bootstrap-5.3.0.min.css-red</a>
-- <a href="https://img.shields.io/badge/"><animate>-<4.1.1>-<green></a>
-- <a href="https://img.shields.io/badge/"><Fontawsome>-<api>-<blue></a>
-- <a href="https://img.shields.io/badge/"><GoogleFont>-<Roboto>-<blueviolet>
-- <a href="https://img.shields.io/badge/"><JQuery>-<3.6.3.min.js>-<yellow></a>
+[https://img.shields.io/badge/](https://img.shields.io/static/v1?label=Bootstrap&message=5.3.0.min.css&color=red)
+[https://img.shields.io/badge/](https://img.shields.io/static/v1?label=animate&message=4.1.1&color=green)
+[https://img.shields.io/badge/](https://img.shields.io/static/v1?label=Fontawsome&message=api&color=blue)
+[https://img.shields.io/badge/](https://img.shields.io/static/v1?label=GoogleFont&message=Roboto&color=blueviolet)
+[https://img.shields.io/badge/](https://img.shields.io/static/v1?label=JQuery&message=3.6.3.min.js&color=yellow)
 
 ## Installation
 
@@ -38,7 +38,7 @@ or
 	
 - Download folder and unzip in local or inline server and launch index.php.
 
-## Project
+## Description
 
 The project displays only 2 pages. home and task page. The index.php contains the login and registration forms, displayed alternately. After login, you are redirected to the todolist.php page.
 ## Index.php
