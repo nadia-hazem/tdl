@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Path: dealTask.php
+// Path: manage.php
 
 require_once 'assets/lib/User.php'; 
 require_once 'assets/lib/Todo.php';

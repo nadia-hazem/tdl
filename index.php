@@ -71,7 +71,6 @@ $pdo = $user->getBdd();
             <!-- formulaire connexion -->
             <div id="connexionDiv" class="animate__animated animate__zoomIn">
                 
-                <!-- login -->
                 <form id="loginForm" class="opa rounded text-center shadow" action="verification.php" method="post"> <!-- redirection vers la page de vérification -->
                 
                     <h1 class="text-center">Connexion</h1>

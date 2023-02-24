@@ -1,6 +1,6 @@
 <?php
 session_start();
-// Path: verification.php
+// Path: traitement.php
 
 require_once 'assets/lib/Todo.php';
 require_once 'assets/lib/User.php';
