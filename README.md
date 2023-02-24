@@ -315,6 +315,8 @@ $user = new User();
 
 ⚪ As for connection/inscription forms, we have a php file traitement.php to deal with actions on submit of new task :
 
+## traitement.php
+
 ```php
 <?php
 session_start();
