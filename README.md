@@ -100,7 +100,7 @@ Vous n'avez pas de compte ? &nbsp;<a href id="switchReg">Inscription</a>
 
 ## Script.js
 
-We declare the different variables needed for script and the functions that switches between forms.
+⚪ We declare the different variables needed for script and the functions that switches between forms.
 To display alternate forms, we just use “display” css rule.
 
 ```javascript
@@ -142,12 +142,12 @@ To display alternate forms, we just use “display” css rule.
 
 ```
 
-As the connection/inscription module is already commented in other repository and is not the purpose of the project, I won’t give details. (You can consult the files as they are commented enough). Let’s focus on Todo list.
+⚪ As the connection/inscription module is already commented in other repository and is not the purpose of the project, I won’t give details. (You can consult the files as they are commented enough). Let’s focus on Todo list.
 
-The POST method in forms, calls verification.php file that is here, a way to have clear and well arranged code.
+⚪ The POST method in forms, calls verification.php file that is here, a way to have clear and well arranged code.
 It’s a list of conditions to manage actions after submit : We call on the User.php class for the different actions. Knowing database connection is in the construct of User class.
 
-😳 To improve the script, I recommend creating a DbConnect.php class so as not to duplicate the database connection in the class construct. (lack of time ! 😅)
+⚪ To improve the script, I recommend creating a DbConnect.php class so as not to duplicate the database connection in the class construct. (lack of time ! 😳)
 
 ## Verification.php
 
@@ -182,11 +182,11 @@ if (isset($_POST['connect'])) {
 }
 ?>
 ```
-After connection we can access the todolist.php file :
+⚪ After connection we can access the todolist.php file :
 
 ## Todolist.php
 
-Before the ```html``` tag, we first start a session and call on classes User.php and Todo.php that  won’t be detailed here, just consult the file (there is 2 classes :
+⚪ Before the ```html``` tag, we first start a session and call on classes User.php and Todo.php that  won’t be detailed here, just consult the file (there is 2 classes :
 _/assets/lib/User.php_ and _/assets/lib/Todo.php_
 
 ```php
@@ -301,14 +301,14 @@ $user = new User();
 </html>
 
 ```
-I would only deal with the todolist script. The connection/registration modules as well as date and time are integrations of other projects whose repository you can consult: Oclock and Guestbook js or even Connection module (without PDO).
+⚪ I would only deal with the todolist script. The connection/registration modules as well as date and time are integrations of other projects whose repository you can consult: Oclock and Guestbook js or even Connection module (without PDO).
 	
 -----
 
-We start with the task form that is just an input and a submit button followed by 2 empty divs to receive dispatched fetched data, by task status.
+⚪ We start with the task form that is just an input and a submit button followed by 2 empty divs to receive dispatched fetched data, by task status.
 
 
-As for connection/inscription forms, we have a php file traitement.php to deal with actions on submit of new task :
+⚪ As for connection/inscription forms, we have a php file traitement.php to deal with actions on submit of new task :
 
 ```php
 <?php
@@ -331,7 +331,7 @@ echo json_encode($tasks);
 
 ```
 
-once again we start a session and call on the Todo.php & User.php classes.	
+⚪ once again we start a session and call on the Todo.php & User.php classes.	
 Only few lines to get data from input : userId and task.	
 For that we call class methods.		
 and finally apply json encode on data.
@@ -550,7 +550,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'toggle') {
 }
 ```
 
-Here we are, all functionalities are ready !
+⚪ Here we are, all functionalities are ready !
 
 ⚠ _Don't forget_ all functions are in class **/assets/lib/User.php** for inscription/connection page and class **/assets/lib/Todo.php** for todolist page. Don't forget to consult it for complete understanding.
 
