@@ -22,6 +22,22 @@ With the exception of the logout button, all possible actions on the “todolist
 </div>
 
 
+## Prérequis
+
+- <a href="https://img.shields.io/badge/"><Bootstrap>-<5.3.0>-<red></a>
+- <a href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"><animate>-<4.1.1>-<green></a>
+- <a href="https://kit.fontawesome.com/a05ac89949.js"><Fontawsome>-<api>-<blue></a>
+- <a href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap"><GoogleFont>-<Roboto>-<blueviolet>
+- <a href="https://code.jquery.com/jquery-3.6.3.min.js"><JQuery>-<3.6.3>-<yellow></a>
+
+## Installation
+
+ - Clone repository in local or inline server and launch folder or index.php.
+or
+- Download folder and unzip in local or inline server and launch index.php.
+
+## Project
+
 The project displays only 2 pages. home and task page. The index.php contains the login and registration forms, displayed alternately. After login, you are redirected to the todolist.php page.
 ## Index.php
 
@@ -203,9 +219,7 @@ $bdd = $user->getBdd();
 
 <body id="todolist">
 
-    ```php
 	<?php include 'includes/header.php'; ?>
-    ```
 
     <div class="wrapper">
 
