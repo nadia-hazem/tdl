@@ -1,7 +1,7 @@
 # TDL
 ## ToDoList js/php/html/css
 
-### [link](https://nadia-hazem.students-laplateforme.io/tdl/index.php) to the project
+### [DEMO](https://nadia-hazem.students-laplateforme.io/tdl/index.php)
 
 A ToDoList with an “index.php” page allowing any user to create an account and connect to it. Once logged in, the site user is redirected to a “todolist.php” page.
 This page contains:
