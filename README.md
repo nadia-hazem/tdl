@@ -14,15 +14,8 @@ This task is removed from the list.
 
 With the exception of the logout button, all possible actions on the “todolist.php” page are 'asynchronous'.
 
-<table>
-  <tr>
-    <td>
-       <img src="https://github.com/nadia-hazem/tdl/blob/03243ef671cea4d45c957cebe8f3a27f2a244460/assets/img/readme-1.png" target="_blank">
-    </td>
-    <td>
-      <img src="https://github.com/nadia-hazem/tdl/blob/03243ef671cea4d45c957cebe8f3a27f2a244460/assets/img/readme-2.png" target="_blank">
-    </td>
-  </tr>
-</table>
+![](https://github.com/nadia-hazem/tdl/blob/03243ef671cea4d45c957cebe8f3a27f2a244460/assets/img/readme-1.png)     ![](https://github.com/nadia-hazem/tdl/blob/03243ef671cea4d45c957cebe8f3a27f2a244460/assets/img/readme-2.png)
+
+
 
 
