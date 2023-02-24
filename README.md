@@ -24,11 +24,11 @@ With the exception of the logout button, all possible actions on the “todolist
 
 ## Prérequis
 
-[https://img.shields.io/badge/](https://img.shields.io/static/v1?label=Bootstrap&message=5.3.0.min.css&color=red)
-[https://img.shields.io/badge/](https://img.shields.io/static/v1?label=animate&message=4.1.1&color=green)
-[https://img.shields.io/badge/](https://img.shields.io/static/v1?label=Fontawsome&message=api&color=blue)
-[https://img.shields.io/badge/](https://img.shields.io/static/v1?label=GoogleFont&message=Roboto&color=blueviolet)
-[https://img.shields.io/badge/](https://img.shields.io/static/v1?label=JQuery&message=3.6.3.min.js&color=yellow)
+- Bootstrap 5.3.0.min.css
+- animate.min.css 4.1.1
+- Fontawsome
+- Google Font
+- JQuery 3.6.3.min.js
 
 ## Installation
 
