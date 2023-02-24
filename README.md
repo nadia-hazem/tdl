@@ -175,7 +175,9 @@ if (isset($_POST['connect'])) {
 After connection we can access the todolist.php file :
 
 ## Todolist.php
-Before the ```html``` tag, we first start a session and call on classes User.php and Todo.php that  won’t be detailed here, just consult the file (there is 2 classes : ** /assets/lib/User.php **  and ** /assets/lib/Todo.php **
+
+Before the ```html``` tag, we first start a session and call on classes User.php and Todo.php that  won’t be detailed here, just consult the file (there is 2 classes :
+_/assets/lib/User.php_ and _/assets/lib/Todo.php_
 
 ```php
 <?php
