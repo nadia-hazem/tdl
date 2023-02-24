@@ -1,4 +1,3 @@
-
 // Attendre que le DOM soit prêt
 document.addEventListener("DOMContentLoaded", function() {
 
