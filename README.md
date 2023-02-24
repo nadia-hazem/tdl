@@ -25,7 +25,7 @@ With the exception of the logout button, all possible actions on the “todolist
 The project displays only 2 pages. home and task page. The index.php contains the login and registration forms, displayed alternately. After login, you are redirected to the todolist.php page.
 ## Index.php
 
-```javascript
+```php
 
 <!-- formulaire connexion -->
 <div id="connexionDiv">
@@ -67,3 +67,50 @@ Vous n'avez pas de compte ? &nbsp;<a href id="switchReg">Inscription</a>
    </form> <!-- fin du formulaire -->
 
 ```
+
+<p></p> are empty containers for errors display. (Css classes have been omitted in order to simplify).
+
+## Script.js
+We declare the different variables needed for script and the functions that switches between forms.
+To display alternate forms, we just use “display” css rule.
+
+```javascript
+
+	// Charger le DOM
+	document.addEventListener("DOMContentLoaded", function () {
+
+	    // REGISTER
+	    const registerSubmit = document.querySelector("#registerSubmit");
+	    let registerForm = document.querySelector("#registerForm");
+	    let loginReg = registerForm.querySelector(".login");
+	    let passwordReg = registerForm.querySelector(".password");
+	    let password2 = registerForm.querySelector("#password2");
+	    let errorReg = registerForm.querySelector(".error");
+	    let inscription = document.querySelector("#inscriptionDiv");
+	    // LOGIN
+	    const loginSubmit = document.querySelector("#loginSubmit");
+	    let loginForm = document.querySelector("#loginForm");
+	    let loginLog = loginForm.querySelector(".login");
+	    let passwordLog = loginForm.querySelector(".password");
+	    let errorLog = loginForm.querySelector(".error");
+	    let connexion = document.querySelector("#connexionDiv");
+
+	    let validate = false;
+
+	    // Display connexion
+	    function displayLoginForm () {
+		inscription.style.display = "none";
+		connexion.style.display = "block";
+
+	    };
+
+	    // Display inscription
+	    function displayRegisterForm () {
+		connexion.style.display = "none";
+		inscription.style.display = "block";
+	    };
+	    displayLoginForm();
+
+
+```
+
