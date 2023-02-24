@@ -147,7 +147,7 @@ To display alternate forms, we just use “display” css rule.
 ⚪ The POST method in forms, calls verification.php file that is here, a way to have clear and well arranged code.
 It’s a list of conditions to manage actions after submit : We call on the User.php class for the different actions. Knowing database connection is in the construct of User class.
 
-⚪ To improve the script, I recommend creating a DbConnect.php class so as not to duplicate the database connection in the class construct. (lack of time ! 😳)
+⚪ To improve the script, I recommend creating a DbConnect.php class so as not to duplicate the database connection in the class construct.😳
 
 ## Verification.php
 
