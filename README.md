@@ -299,12 +299,47 @@ $bdd = $user->getBdd();
             document.getElementById("clockDisplay").innerHTML = dt;
             setTimeout(horloge, 1000); // mise à jour du contenu "clockDisplay" toutes les secondes
         }
-        horloge();
-
+        horloge();`
+	 
     </script>
 
 </body>
 </html>
 
 ```
+<blockquote>
+	
+	NB : I would only deal with the todolist script. The connection/registration modules as well as date and time are integrations of other projects whose repository you can consult: Oclock and Guestbook js or even Connection module (without PDO).
+	
+</blockquote>
+---
 
+We start with the task form that is just an input and a submit button followed by 2 empty divs to receive dispatched fetched data, by task status.
+
+
+As for connection/inscription forms, we have a php file traitement.php to deal with actions on submit :
+
+```php
+<?php
+session_start();
+// Path: traitement.php
+
+require_once 'assets/lib/Todo.php';
+require_once 'assets/lib/User.php';
+$todo = new Todo();
+$user = new User();
+
+
+// Récupération des données pour affichage
+$userId = $user->getId();
+$tasks = $todo->getTasks($userId);
+
+// Envoi des données au format JSON
+header('Content-Type: application/json');
+echo json_encode($tasks);
+
+```
+
+once again we start a session and call on the Todo.php & User.php classes.
+Only few lines to get data from input : userId and task
+For that we call class methods.
