@@ -159,7 +159,8 @@ Before ```html``` tag, we first start a session and call on classes User.php and
 ```php
 <?php
 session_start();
-// Path: user.php
+// Path: todolist.php
+
 require_once 'assets/lib/User.php';
 require_once 'assets/lib/Todo.php';
 $user = new User();
@@ -186,6 +187,7 @@ $bdd = $user->getBdd();
         
     <!-- CSS -->
     <link rel="stylesheet" href="/tdl/assets/css/style.css">
+    	<!-- animation lib -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
     
     <!-- favicon -->
@@ -194,14 +196,16 @@ $bdd = $user->getBdd();
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
-    
+    <!-- js script for todolist -->
     <script src="/tdl/assets/js/app.js"></script>
     
 </head>
 
 <body id="todolist">
 
-    <?php include 'includes/header.php'; ?>
+    ```php
+	<?php include 'includes/header.php'; ?>
+    ```
 
     <div class="wrapper">
 
