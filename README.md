@@ -101,7 +101,7 @@ Vous n'avez pas de compte ? &nbsp;<a href id="switchReg">Inscription</a>
 ## Script.js
 
 ⚪ We declare the different variables needed for script and the functions that switches between forms.
-To display alternate forms, we just use “display” css rule.
+To display alternate forms, we just use “display” css rule. 
 
 ```javascript
 
@@ -182,6 +182,11 @@ if (isset($_POST['connect'])) {
 }
 ?>
 ```
+
+⚪ Of course the called functions, connect(), register(), isUserExits(), can be found in class User.php
+
+----
+
 ⚪ After connection we can access the todolist.php file :
 
 ## Todolist.php
