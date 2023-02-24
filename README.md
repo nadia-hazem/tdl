@@ -147,7 +147,7 @@ To display alternate forms, we just use “display” css rule.
 ⚪ The POST method in forms, calls verification.php file that is here, a way to have clear and well arranged code.
 It’s a list of conditions to manage actions after submit : We call on the User.php class for the different actions. Knowing database connection is in the construct of User class.
 
-⚪ To improve the script, I recommend creating a DbConnect.php class as the database is called in each class construct.😳
+⚡ To improve the script, I recommend creating a DbConnect.php class as the database is called in each class construct.😳
 
 ## Verification.php
 
@@ -557,7 +557,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'toggle') {
 }
 ```
 
-⚪ Here we are, all functionalities are ready !
-
 ⚠ _Don't forget_ all functions are in class **/assets/lib/User.php** for inscription/connection page and class **/assets/lib/Todo.php** for todolist page. Don't forget to consult it for complete understanding.
 
+
+Here we are, all functionalities are ready ! Now you deserve to enjoy a good ☕
