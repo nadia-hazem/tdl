@@ -135,7 +135,7 @@ To display alternate forms, we just use “display” css rule.
 As the connection/inscription module is already commented in other repository and is not the purpose of the project, I won’t give details. (You can consult the files as they are commented enough). Let’s focus on Todo list.
 
 The POST method in forms, calls verification.php file that is here, a way to have clear and well arranged code.
-It’s a list of conditions to manage actions after submit : We call on the User.php class for the different actions. Knowing database connection is in the construct of User class.
+It’s a list of conditions to manage actions after submit : We call on the User.php class for the different actions. Knowing database connection is in the construct of User class. with hindsight I recommend creating a DbConnect.php class so as not to duplicate the database connection in the class construct. (lack of time ! 😅)
 
 ## Verification.php
 
@@ -173,7 +173,7 @@ if (isset($_POST['connect'])) {
 After connection we can access the todolist.php file :
 
 ## Todolist.php
-Before ```html``` tag, we first start a session and call on classes User.php and Todo.php that  won’t be detailed here, just consult the file (there is 2 classes : User and Todo.
+Before the ```html``` tag, we first start a session and call on classes User.php and Todo.php that  won’t be detailed here, just consult the file (there is 2 classes : ** /assets/lib/User.php **  and ** /assets/lib/Todo.php **
 
 ```php
 <?php
