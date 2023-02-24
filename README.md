@@ -22,7 +22,7 @@ With the exception of the logout button, all possible actions on the “todolist
 </div>
 
 
-## Prérequis
+## Pre-required
 
 - Bootstrap 5.3.0.min.css
 - animate.min.css 4.1.1
@@ -89,6 +89,7 @@ Vous n'avez pas de compte ? &nbsp;<a href id="switchReg">Inscription</a>
 ```<p></p>``` are empty containers for errors display. (Css classes have been omitted in order to simplify).
 
 ## Script.js
+
 We declare the different variables needed for script and the functions that switches between forms.
 To display alternate forms, we just use “display” css rule.
 
