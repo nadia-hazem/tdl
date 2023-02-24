@@ -48,7 +48,7 @@ _*/assets/lib/User.php*_
 
 _*/assets/lib/Todo.php*_
 
-Similarly, I omitted the header and the footer. The header containing only the disconnection link and the name of the user connected during a session.
+Similarly, I omitted the header and the footer. The header containing only the disconnection link and the current user login during a session.
 
 
 ## Index.php
