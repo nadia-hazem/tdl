@@ -68,7 +68,7 @@ Vous n'avez pas de compte ? &nbsp;<a href id="switchReg">Inscription</a>
 
 ```
 
-<p></p> are empty containers for errors display. (Css classes have been omitted in order to simplify).
+```html <p></p>``` are empty containers for errors display. (Css classes have been omitted in order to simplify).
 
 ## Script.js
 We declare the different variables needed for script and the functions that switches between forms.
