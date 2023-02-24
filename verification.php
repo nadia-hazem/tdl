@@ -35,26 +35,4 @@ if (isset($_POST['changeLogin'])) {
     $user->changeLogin($login, $password);
 }
 
-// change password
-if (isset($_POST['changePassword'])) {
-    $oldPassword = $_POST['oldpassword'];
-    $newPassword = $_POST['newPassword'];
-    $user->changePassword($oldPassword, $newPassword);
-}
-
-// delete account
-if (isset($_POST['deleteAccount'])) {
-    $login = $_POST['login'];
-    $password = $_POST['password'];
-    $user->delete($password);
-}
-
-// Afficher les commentaires
-if (isset($_POST['go']) && $_POST['go']=='Signer') {
-    /* $id = $_POST['id']; */
-    /* var_dump($id); */
-    $comment = $_POST['comment'];
-    /* var_dump($comment); */
-    $user->addComment($comment);
-}
 
