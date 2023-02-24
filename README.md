@@ -187,7 +187,6 @@ session_start();
 require_once 'assets/lib/User.php';
 require_once 'assets/lib/Todo.php';
 $user = new User();
-$bdd = $user->getBdd();
 ```
 ```html
 <!DOCTYPE html>
@@ -199,41 +198,31 @@ $bdd = $user->getBdd();
     <title>Todolist</title>
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">   
     <!-- Font Awesome -->
-    <script src="https://kit.fontawesome.com/a05ac89949.js" crossorigin="anonymous"></script>
-    
+    <script src="https://kit.fontawesome.com/a05ac89949.js" crossorigin="anonymous"></script>  
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
-        
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">       
     <!-- CSS -->
     <link rel="stylesheet" href="/tdl/assets/css/style.css">
     	<!-- animation lib -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>    
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>       
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="/tdl/assets/img/favicon.png"/>    
-    
+    <link rel="shortcut icon" type="image/png" href="/tdl/assets/img/favicon.png"/>       
     <!-- JS -->
     <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
-
     <!-- js script for todolist -->
     <script src="/tdl/assets/js/app.js"></script>
     
 </head>
 
 <body id="todolist">
-
 	<?php include 'includes/header.php'; ?>
-
     <div class="wrapper">
-
-        <main class="container mt-5 pt-5 justify-content-center">
-
+        
+	<main class="container mt-5 pt-5 justify-content-center">
             <div class="col"> <!-- date & time -->
-
                 <p class="text-white text-center">
                     <?php
                     $mois = array(1=>'janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre');
@@ -244,27 +233,20 @@ $bdd = $user->getBdd();
                 <div id="clockDisplay" class="clock quartz text-center text-white lead">
                     <h1>00:00:00</h1>
                 </div>
-
             </div> <!--/col-->
 
             <!-- tasks form -->
             <form method="post" id="todoForm" class="todoform opa rounded text-center shadow w-100 animate__animated animate__zoomIn" action="">
-
-                <label for="task"><h4>Tâche :</h4></label>
-                
+                <label for="task"><h4>Tâche :</h4></label>                
                 <input type="text" name="task" id="task" class="rounded inline form-control" required>
-
                 <button type="submit" class="btn bg-blue my-1" id="addTask" name="ajouter">Ajouter</button>
-
             </form>
 
             <p></p>
 
             <!-- to do tasks list -->
             <div class="row wrap rounded w-100 mx-auto animate__animated animate__zoomIn">
-
                 <section class="col md-5 rounded mx-3 py-3 opa">
-
                     <div class="bg-title rounded w-100">
                         <h2 class="h2 text-center text-white p-2">A faire</h2>
                     </div>
@@ -275,7 +257,6 @@ $bdd = $user->getBdd();
                 </section>
                 <!-- done tasks list -->
                 <section class="col md-5 rounded mx-3 py-3 opa">
-
                     <div class="bg-title rounded w-100">
                         <h2 class="h2 text-center text-white p-2">Terminées</h2>
                     </div>
@@ -285,8 +266,7 @@ $bdd = $user->getBdd();
 
                 </section>
 
-            </div>
-        
+            </div>        
         </main>
 
         <!-- keeps footer at bottom  -->
@@ -305,19 +285,15 @@ $bdd = $user->getBdd();
             setTimeout(horloge, 1000); // mise à jour du contenu "clockDisplay" toutes les secondes
         }
         horloge();`
-	 
     </script>
 
 </body>
 </html>
 
 ```
-<blockquote>
+> : I would only deal with the todolist script. The connection/registration modules as well as date and time are integrations of other projects whose repository you can consult: Oclock and Guestbook js or even Connection module (without PDO).
 	
-	NB : I would only deal with the todolist script. The connection/registration modules as well as date and time are integrations of other projects whose repository you can consult: Oclock and Guestbook js or even Connection module (without PDO).
-	
-</blockquote>
----
+-----
 
 We start with the task form that is just an input and a submit button followed by 2 empty divs to receive dispatched fetched data, by task status.
 
