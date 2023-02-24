@@ -22,3 +22,48 @@ With the exception of the logout button, all possible actions on the “todolist
 </div>
 
 
+The project displays only 2 pages. home and task page. The index.php contains the login and registration forms, displayed alternately. After login, you are redirected to the todolist.php page.
+## Index.php
+
+```javascript
+
+<!-- formulaire connexion -->
+<div id="connexionDiv">
+   <form id="loginForm” action="verification.php" method="post"> 
+     <label for="login">Login</label>
+     <input type="text" class="login" placeholder="Entrer le nom d'utilisateur" name="login" required>
+      <p></p>
+	<label for="password">Mot de passe</label>
+      <input type="password" class="password" placeholder="Entrer le mot de passe" name="password" required>
+      <p></p>
+      </div>
+      <br>
+      <input type="submit" id="loginSubmit" value="Connexion">
+      <p class="error"></p>
+Vous n'avez pas de compte ? &nbsp;<a href id="switchReg">Inscription</a>
+   </form> <!-- /formulaire -->
+
+<!-- formulaire inscription -->
+<div id="inscriptionDiv">
+   <form id="registerForm"  action="verification.php">
+      <label for="nom">Nom</label>
+      <input type="text" name="nom" required>
+      <p></p>
+      <label for="prenom">Prénom</label>
+      <input type="text" name="prenom" required >
+      <p></p>
+      <label for="login">login</label>
+      <input type="text" class="login" name="login" required>
+      <p></p>
+      <label for="password">Mot de passe</label>
+      <input type="password" class="password" name="password" required>
+      <p></p>
+      <label for="password2">Confirmer le mot de passe</label>
+      <input type="password" name="password2" id="password2" required>
+      <p></p>
+      <input type="submit" id="registerSubmit" value="Inscription">
+      <p class="error"></p>
+      Déjà inscrit ? &nbsp;<a href id="switchLog">Connexion</a>
+   </form> <!-- fin du formulaire -->
+
+```
