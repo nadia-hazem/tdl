@@ -137,7 +137,7 @@ As the connection/inscription module is already commented in other repository an
 The POST method in forms, calls verification.php file that is here, a way to have clear and well arranged code.
 It’s a list of conditions to manage actions after submit : We call on the User.php class for the different actions. Knowing database connection is in the construct of User class.
 
-:star: With hindsight I recommend creating a DbConnect.php class so as not to duplicate the database connection in the class construct. (lack of time ! 😅)
+:star: To improve the script, I recommend creating a DbConnect.php class so as not to duplicate the database connection in the class construct. (lack of time ! 😅)
 
 ## Verification.php
 
@@ -320,7 +320,7 @@ $bdd = $user->getBdd();
 We start with the task form that is just an input and a submit button followed by 2 empty divs to receive dispatched fetched data, by task status.
 
 
-As for connection/inscription forms, we have a php file traitement.php to deal with actions on submit :
+As for connection/inscription forms, we have a php file traitement.php to deal with actions on submit of new task :
 
 ```php
 <?php
@@ -346,3 +346,178 @@ echo json_encode($tasks);
 once again we start a session and call on the Todo.php & User.php classes.
 Only few lines to get data from input : userId and task
 For that we call class methods.
+
+We can now consider the javascript main page for Todolist :
+
+## app.js
+
+```js
+
+document.addEventListener("DOMContentLoaded", function() {
+
+    // declare constants
+    const todoForm = document.querySelector("#todoForm");
+    const todoList = document.querySelector("#todoList");
+    const doneList = document.querySelector("#doneList");
+    const btnAdd = document.querySelector("#addTask");
+
+    // function to create an element of list with check and delete icons
+    function createTaskElement(task) {
+        // Créer l'élément de liste
+        let tr = document.createElement("tr");
+        let tdText = document.createElement("td");
+        tdText.innerText = ' ⚑ ' + task.task;
+        let tdDate = document.createElement("td");
+        let tdBtns = document.createElement("td");
+
+        // check button
+        const toggleButton = document.createElement("button");
+        toggleButton.classList.add("btn", "btn-sm");
+        toggleButton.setAttribute("id", task.id);
+        toggleButton.innerText = " ✅";
+        toggleButton.style.border = "none";
+        toggleButton.addEventListener("click", function() {
+            // Récupérer l'ID de la tâche
+            let id = this.getAttribute("id");
+            //fonction pour basculer la tâche
+            toggleTask(id);
+        });
+
+        // delete button
+        const deleteButton = document.createElement("button");
+        deleteButton.classList.add("btn", "btn-sm");
+        deleteButton.setAttribute("id", task.id);
+        deleteButton.innerText = " ❌";
+        deleteButton.style.border = "none";
+        deleteButton.addEventListener("click", function() {
+            deleteTask(this.getAttribute("id"));
+        });
+        // Ajouter les 3 <td> à la <tr>append td's to tr
+        tr.appendChild(tdText);
+        tr.appendChild(tdDate);
+        tr.appendChild(tdBtns);
+
+        // conditions for check and delete buttons
+        if (task.state == 1) {
+            tdDate.innerText = " ⏵ " + task.dateStart + " ⏯ " + task.dateEnd;
+            // append delete button
+            tdBtns.appendChild(deleteButton);
+        } else {
+            tdDate.innerText = " 📅 " + task.dateStart;
+            // append delete and check button 
+            tdBtns.appendChild(deleteButton);
+            tdBtns.appendChild(toggleButton);
+        }
+        return tr;
+    }
+
+    // function to add a task to list
+    function addTask() {
+        let data = new FormData(todoForm);
+        fetch("manageTask.php", {
+            method: "POST",
+            body: data
+        })
+        .then((response) => response.text())
+        .then((data) => {
+            data = data.trim();
+            if (data == "ok") {
+                todoForm.reset();
+                displayTasks();
+            } else {
+                todoForm.nextElementSibling.innerHTML = "erreur";
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
+
+    function displayTasks() {
+        fetch("traitement.php", {
+            method: "GET"
+        })
+        .then((response) => response.json())
+        .then((data) => {
+            todoList.innerHTML = "";
+            doneList.innerHTML = "";
+            for (let i = 0; i < data.length; i++) {
+                const td = createTaskElement(data[i]);
+                if (data[i].state == 1) {
+                    doneList.appendChild(td);
+
+                } else {
+                    todoList.appendChild(td);
+                }
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
+
+    // function to delete a task
+    function deleteTask(id) {
+        let data = new FormData();
+        data.append("id", id);
+        data.append("action", "delete");
+        fetch("manageTask.php", {
+            method: "POST",
+            body: data
+        })
+        .then((response) => response.text())
+        .then((data) => {
+            data = data.trim();
+            if (data == "ok") {
+                // on display les tâches
+                displayTasks();
+            } else {
+                todoForm.nextElementSibling.innerHTML = "erreur";
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
+
+    // function to toggle task
+    function toggleTask(id) {
+        let data = new FormData();
+        data.append("id", id);
+        data.append("action", "toggle");
+        fetch("manageTask.php", {
+            method: "POST",
+            body: data
+        })
+        .then((response) => response.text())
+        .then((data) => {
+            data = data.trim();
+            if (data == "ok") {
+                // on display les tâches
+                displayTasks();
+            } else {
+                todoForm.nextElementSibling.innerHTML = "erreur";
+            }
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
+
+    displayTasks();
+
+    // submit eventlistener
+    todoForm.addEventListener("submit", function(event) {
+    
+        // prevent default form behavior
+        event.preventDefault();
+
+        // add task to todo tasks
+        addTask();
+    });
+});
+
+
+```
+
+
