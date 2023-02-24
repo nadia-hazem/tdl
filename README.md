@@ -321,11 +321,12 @@ echo json_encode($tasks);
 
 ```
 
-once again we start a session and call on the Todo.php & User.php classes.
-Only few lines to get data from input : userId and task
-For that we call class methods.
+once again we start a session and call on the Todo.php & User.php classes.	
+Only few lines to get data from input : userId and task.	
+For that we call class methods.		
+and finally apply json encode on data.
 
-We can now consider the javascript main page for Todolist :
+### We can now consider the javascript for Todolist :
 
 ## app.js
 
