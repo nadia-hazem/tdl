@@ -136,6 +136,7 @@ As the connection/inscription module is already commented in other repository an
 
 The POST method in forms, calls verification.php file that is here, a way to have clear and well arranged code.
 It’s a list of conditions to manage actions after submit : We call on the User.php class for the different actions. Knowing database connection is in the construct of User class.
+
 :star: With hindsight I recommend creating a DbConnect.php class so as not to duplicate the database connection in the class construct. (lack of time ! 😅)
 
 ## Verification.php
