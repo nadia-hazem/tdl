@@ -496,7 +496,51 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-
 ```
 
+- As you can notice All list elements are created here, via js.
+
+- For each element we create a check button and a delete button depending on whether the task is in one list or the other.
+
+- Each time we make a fetch for data. 
+
+- We create several functions to manage actions linked to task as addTask, deleteTask, toggleTask, displayTask...
+
+A last file deals with tasks state :
+
+## manageTask.php
+
+```php
+session_start();
+
+// Path: manageTask.php
+
+require_once 'assets/lib/User.php'; 
+require_once 'assets/lib/Todo.php';
+$user = new User();
+$todo = new Todo();
+
+// Add task to DB
+if (isset($_POST['task'])) {
+    $task = $_POST['task'];
+    $userId = $user->getId();
+    $todo->insertTask($task, $userId);
+}
+
+// delete task from DB
+if (isset($_POST['action']) && $_POST['action'] == 'delete') {
+    $taskId = $_POST['id'];
+    $todo->deleteTask($taskId);
+}
+
+// mark task as done
+if (isset($_POST['action']) && $_POST['action'] == 'toggle') {
+    $taskId = $_POST['id'];
+    $todo->markTask($taskId);
+}
+```
+
+Here we are, all functionalities are ready !
+
+_Don't forget_ all functions are in class **/assets/lib/User.php** for inscription/connection page and class **/assets/lib/Todo.php** for todolist page. Don't forget to consult it.
 
