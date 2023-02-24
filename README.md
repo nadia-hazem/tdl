@@ -41,6 +41,16 @@ or
 ## Description
 
 The project displays only 2 pages. home and task page. The index.php contains the login and registration forms, displayed alternately. After login, you are redirected to the todolist.php page.
+
+Here some details about script logic, class files won't be displayer as you just have to consult them for methods. Consider starting viewing these files first :
+
+/assets/lib/User.php
+
+/assets/lib/Todo.php
+
+Similarly, I omitted the header and the footer. The header containing only the disconnection link and the name of the user connected during a session.
+
+
 ## Index.php
 
 ```php
@@ -137,7 +147,7 @@ As the connection/inscription module is already commented in other repository an
 The POST method in forms, calls verification.php file that is here, a way to have clear and well arranged code.
 It’s a list of conditions to manage actions after submit : We call on the User.php class for the different actions. Knowing database connection is in the construct of User class.
 
-:star: To improve the script, I recommend creating a DbConnect.php class so as not to duplicate the database connection in the class construct. (lack of time ! 😅)
+😳 To improve the script, I recommend creating a DbConnect.php class so as not to duplicate the database connection in the class construct. (lack of time ! 😅)
 
 ## Verification.php
 
@@ -291,7 +301,7 @@ $user = new User();
 </html>
 
 ```
-> : I would only deal with the todolist script. The connection/registration modules as well as date and time are integrations of other projects whose repository you can consult: Oclock and Guestbook js or even Connection module (without PDO).
+I would only deal with the todolist script. The connection/registration modules as well as date and time are integrations of other projects whose repository you can consult: Oclock and Guestbook js or even Connection module (without PDO).
 	
 -----
 
