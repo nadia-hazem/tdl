@@ -11,13 +11,9 @@
         // Méthodes  
         public function __construct() { 
             $host = 'localhost';
-            $dbname = 'tdl';
-            $dbuser = 'root';
-            $dbpass = '';
-            //$host = 'localhost';
-            //$dbname = 'nadia-hazem_tdl';
-            //$dbuser = 'nadia-hazem';
-            //$dbpass = '*dbpassword*';
+            $dbname = 'fqdbhzuh_tdl';
+            $dbuser = 'fqdbhzuh_n0NAq79EJ';
+            $dbpass = 'tNvTEkztxMnhMWtURtBHPvB5EHROYGBf';
 
             /* $this->bdd = new PDO('mysql:host=localhost; dbname=classes; charset=utf8', 'root', ''); */
             try {
