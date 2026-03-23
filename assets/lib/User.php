@@ -12,6 +12,7 @@
         // Méthodes  
         public function __construct() { 
             $host = 'localhost';
+
             $dbname = 'tdl';
             $dbuser = 'root';
             $dbpass = '';
