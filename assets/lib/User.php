@@ -1,5 +1,6 @@
 <?php
 // Path: assets\lib\User.php
+
     class User
     {
         // attributs
@@ -14,12 +15,7 @@
             $dbname = 'tdl';
             $dbuser = 'root';
             $dbpass = '';
-            //$host = 'localhost';
-            //$dbname = 'nadia-hazem_tdl';
-            //$dbuser = 'nadia-hazem';
-            //$dbpass = '*dbpassword*';
 
-            /* $this->bdd = new PDO('mysql:host=localhost; dbname=classes; charset=utf8', 'root', ''); */
             try {
                 $this->bdd = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbuser, $dbpass);
                 $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

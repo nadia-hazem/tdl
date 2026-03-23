@@ -17,7 +17,7 @@
     </div>
 
     <div class="w-100 text-center"> <!-- Section Footer -->
-        <p class="text-white my-auto py-2">© 2023 Nadia Hazem</p>
+        <p class="text-white my-auto py-2">©Pictelle 2023</p>
     </div>
 
 </footer>

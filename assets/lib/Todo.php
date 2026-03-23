@@ -13,10 +13,6 @@ class Todo {
         $dbname = 'tdl';
         $dbuser = 'root';
         $dbpass = '';
-        //$host = 'localhost';
-        //$dbname = 'nadia-hazem_tdl';
-        //$dbuser = 'nadia-hazem';
-        //$dbpass = '*dbpassword*';
 
         try {
             $this->bdd = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $dbuser, $dbpass);
